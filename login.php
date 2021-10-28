@@ -1,36 +1,35 @@
 <?php include 'includes/header.php' ?>
 
-	<main class="container">
-		<div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
-			Все ок
-			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+<main class="container">
+	<div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+		Все ок
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+	<div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+		А тут не ок
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+	<div class="row mt-5">
+		<div class="col">
+			<h2 class="text-center">Вход в личный кабинет</h2>
+			<p class="text-center">Если вы еще не зарегистрированы, то самое время <a href="register.html">зарегистрироваться</a></p>
 		</div>
-		<div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
-			А тут не ок
-			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+	<div class="row mt-3">
+		<div class="col-4 offset-4">
+			<form>
+				<div class="mb-3">
+					<label for="login-input" class="form-label">Логин</label>
+					<input type="text" class="form-control is-valid" id="login-input" required>
+				</div>
+				<div class="mb-3">
+					<label for="password-input" class="form-label">Пароль</label>
+					<input type="password" class="form-control is-invalid" id="password-input" required>
+				</div>
+				<button type="submit" class="btn btn-primary">Войти</button>
+			</form>
 		</div>
-		<div class="row mt-5">
-			<div class="col">
-				<h2 class="text-center">Вход в личный кабинет</h2>
-				<p class="text-center">Если вы еще не зарегистрированы, то самое время <a href="register.html">зарегистрироваться</a></p>
-			</div>
-		</div>
-		<div class="row mt-3">
-			<div class="col-4 offset-4">
-				<form>
-					<div class="mb-3">
-						<label for="login-input" class="form-label">Логин</label>
-						<input type="text" class="form-control is-valid" id="login-input" required>
-					</div>
-					<div class="mb-3">
-						<label for="password-input" class="form-label">Пароль</label>
-						<input type="password" class="form-control is-invalid" id="password-input" required>
-					</div>
-					<button type="submit" class="btn btn-primary">Войти</button>
-				</form>
-			</div>
-		</div>
-	</main>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
-</body>
-</html>
+	</div>
+</main>
+
+<?php include 'includes/footer.php' ?>

@@ -1,17 +1,24 @@
-<?php 
-  include 'includes/functions.php';
+<?php include 'includes/functions.php';
+
+$users_count = db_query("SELECT COUNT(id) FROM `users`;")->fetchColumn();
+
+$links_count = db_query("SELECT COUNT(id) FROM `links`;")->fetchColumn();
+
+$views_count = db_query("SELECT SUM(views) FROM `links`;")->fetchColumn();
+
 ?>
 
 <!doctype html>
 <html lang="ru">
+
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport"
-				content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
 	<title><?php echo SITE_NAME; ?></title>
 </head>
+
 <body>
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -35,5 +42,3 @@
 			</div>
 		</nav>
 	</header>
-
-	<?php echo get_url(); ?>
