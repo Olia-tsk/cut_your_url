@@ -5,7 +5,8 @@ if (isset($_GET["url"]) && !empty($_GET["url"])) {
 	$url = strtolower(trim($_GET["url"]));
 	$link = db_query("SELECT * FROM `links` WHERE `short_link` = '$url';")->fetch();
 	if (empty($link)) {
-		echo "Nothing found...";
+		//echo "Nothing found...";
+		header('Location: 404.php');
 		die;
 	}
 	db_exec("UPDATE `links`SET `views` = `views`+1 WHERE `short_link` = '$url';");
