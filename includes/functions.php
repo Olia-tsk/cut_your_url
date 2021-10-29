@@ -101,3 +101,9 @@ function user_registration($auth_data)
 
   return true;
 }
+
+// AUTHORIZATION
+
+function user_auth($auth_data)
+{
+}
