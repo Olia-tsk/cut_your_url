@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Окт 28 2021 г., 11:34
+-- Время создания: Окт 29 2021 г., 13:42
 -- Версия сервера: 8.0.24
 -- Версия PHP: 8.0.8
 
@@ -41,7 +41,7 @@ CREATE TABLE `links` (
 --
 
 INSERT INTO `links` (`id`, `user_id`, `long_link`, `short_link`, `views`) VALUES
-(1, 1, 'https://htmlacademy.ru/blog/boost/frontend/callback-functions-server', 'QkpLNt', 3),
+(1, 1, 'https://htmlacademy.ru/blog/boost/frontend/callback-functions-server', 'QkpLNt', 4),
 (2, 1, 'https://htmlacademy.ru/tutorial/php/mysql', 'pUhdCw', 3),
 (3, 2, 'https://www.phpbbguru.net/community/viewtopic.php?t=44906', 'yAueqUo', 1);
 
@@ -65,7 +65,10 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `login`, `pass`) VALUES
 (1, 'admin', 'qwas12345'),
 (2, 'Anton', 'qwas12345'),
-(3, 'Foma', '123459');
+(3, 'Foma', '123459'),
+(4, 'Hanna', '123456'),
+(5, 'Dan', '$2y$10$Pr2lE/wkKLKq/Mn3wiQ9qeSPKyUEhbYdJManFQZJ3tu3XsoPZkDpC'),
+(6, 'Polly', '$2y$10$em8Vpn.Cw2.RVdsIOZozrODIHaAT0stbdeKyOmNa68bch67tKYBru');
 
 --
 -- Индексы сохранённых таблиц
@@ -99,7 +102,7 @@ ALTER TABLE `links`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
