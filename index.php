@@ -16,6 +16,7 @@ if (isset($_GET["url"]) && !empty($_GET["url"])) {
 	die;
 }
 
+echo $_SESSION['error'];
 ?>
 
 <main class="container">
