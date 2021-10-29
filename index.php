@@ -1,19 +1,21 @@
-<?php include 'includes/header.php' ?>
-
 <?php
+include_once 'includes/header.php';
+
 if (isset($_GET["url"]) && !empty($_GET["url"])) {
 	$url = strtolower(trim($_GET["url"]));
-	$link = db_query("SELECT * FROM `links` WHERE `short_link` = '$url';")->fetch();
+
+	$link = get_link_info($url);
+
 	if (empty($link)) {
-		//echo "Nothing found...";
 		header('Location: 404.php');
 		die;
 	}
-	db_exec("UPDATE `links`SET `views` = `views`+1 WHERE `short_link` = '$url';");
-	header('Location: ' . $link['long_link']);
 
+	update_views($url);
+	header('Location: ' . $link['long_link']);
 	die;
 }
+
 ?>
 
 <main class="container">
