@@ -1,7 +1,5 @@
 <?php include 'includes/header.php';
 
-var_dump($_POST);
-
 $error = '';
 if (isset($_SESSION["error"]) && !empty($_SESSION["error"])) {
 	$error = $_SESSION['error'];

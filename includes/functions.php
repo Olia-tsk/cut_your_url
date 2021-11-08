@@ -106,4 +106,27 @@ function user_registration($auth_data)
 
 function user_auth($auth_data)
 {
+  if (empty($auth_data) || !isset($auth_data["login"]) || empty($auth_data['login']) || !isset($auth_data["pass"]) || empty($auth_data['pass'])) {
+    $_SESSION["error"] = "Login and/or password can't be empty";
+    header('Location: login.php');
+    die;
+  }
+
+  $user = get_user_info($auth_data['login']);
+
+  if (empty($user)) {
+    $_SESSION['error'] = "Login and/or password not correct. Actually user does not exist.";
+    header('Location: login.php');
+    die;
+  }
+
+  if (password_verify($auth_data['pass'], $user['pass'])) {
+    $_SESSION['user'] = $user;
+    header('Location: profile.php');
+    die;
+  } else {
+    $_SESSION['error'] = "Login and/or password not correct. Actually only password.";
+    header('Location: login.php');
+    die;
+  }
 }
