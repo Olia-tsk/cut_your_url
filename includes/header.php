@@ -39,13 +39,16 @@ $views_count = get_views_sum();
 
 					</ul>
 					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-						<li class="nav-item">
-							<?php if (isset($_SESSION['user']['id']) && !empty($_SESSION['user']['id'])) { ?>
+						<?php if (isset($_SESSION['user']['id']) && !empty($_SESSION['user']['id'])) { ?>
+							<li class="nav-item">
+								<a class="nav-link" aria-current="page" href="<?php echo get_url('profile.php'); ?>">Hello, <?php echo $_SESSION['user']['login']; ?></a>
+							</li>
+							<li class="nav-item">
 								<a href="<?php echo get_url('includes/logout.php'); ?>" class="btn btn-primary">Выйти</a>
 							<?php } else { ?>
 								<a href="<?php echo get_url('login.php'); ?>" class="btn btn-primary">Войти</a>
-							<?php } ?>
-						</li>
+							</li>
+						<?php } ?>
 					</ul>
 				</div>
 			</div>

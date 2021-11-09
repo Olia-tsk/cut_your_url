@@ -36,6 +36,9 @@
           </form>
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="<?php echo get_url('profile.php'); ?>">Hello, <?php echo $_SESSION['user']['login']; ?></a>
+            </li>
+            <li class="nav-item">
               <a href="<?php echo get_url('includes/logout.php'); ?>" class="btn btn-primary">Выйти</a>
             </li>
           </ul>

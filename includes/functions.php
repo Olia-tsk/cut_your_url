@@ -165,3 +165,13 @@ function generate_link($length = 3)
 
   return $new_link;
 }
+
+function edit_link($id, $link)
+{
+  if (empty($id) || empty($link)) return false;
+
+  return db_query("UPDATE `links` SET `long_link` = '$link' WHERE `id` = '$id';");
+  $_SESSION['success'] = "Link successfully edited";
+  // header('Location: profile.php');
+  // die;
+}
